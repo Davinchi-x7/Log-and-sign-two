@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+</head>
+<body>
+<form action="/insert" method="post" class="row g-3">
+    {% csrf_token %}}
+  <div id="1">
+    <label class="form-label">Name</label>
+    <input type="text" class="form-control" id="inputEmail4" name="ESName" placeholder="Estate name">
+  </div>
+  <div>
+    <label class="form-label">Size</label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="Owners name" name="Name">
+  </div>
+
+
+     <div>
+    <label class="form-label">Quantity</label>
+    <input type="number" class="form-control" id="inputCity" placeholder="Quantity" name="units">
+  </div>
+
+            {% for m in messages %}
+             <h3>{{ m }}</h3>
+            {% endfor %}
+
+
+  <div>
+    <button type="submit" class="btn btn-primary " >Buy</button>
+  </div>
+    <br>
+
+</form>
+
+
+
+            <h1 class="text-info text-center" style="margin-top:150px ">Houses</h1>
+            <table class="table" style="width: 700px;margin:150px auto">
+                <tr>
+                    <th>Estate name</th>
+                    <th>Owners Name</th>
+                    <th>Number of units</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                    <th>Payments</th>
+                </tr>
+               {% for house in houses %}
+                   <tr>
+                         <th scope="row">{{d.id}}</th>
+                         <td>{{ house.estate_name }}</td>
+                         <td>{{ house.owners_name }}</td>
+                         <td>{{ house.units }}</td>
+                   </tr>
+
+               {% endfor %}
+
+            </table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+</head>
+<body>
+<form action="/insert" method="post" class="row g-3">
+    {% csrf_token %}}
+  <div>
+    <label class="form-label">Family name</label>
+    <input type="text" class="form-control" id="inputEmail4" name="name" placeholder="Name">
+  </div>
+  <div>
+    <label class="form-label">No of units</label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="Size" name="no_of_units">
+  </div>
+  <div >
+    <label  class="form-label">Company</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Company" name="company">
+  </div>
+  <div>
+    <label  class="form-label">MFG</label>
+    <input type="date" class="form-control" id="inputAddress2" placeholder="Date of manufacture" name="mfg">
+  </div>
+  <div>
+
+
+
+  <div>
+    <button type="submit" class="btn btn-primary " >Submit</button>
+  </div>
+    <br>
+
+</form>
+
+</body>
+</html>
